@@ -2,17 +2,24 @@ var targetScore;
 var loss;
 var win;
 
+$("#result").html('hello world');
+//this game will have 4 crystals and random target number
 for(var i = 0; i < 4; i++){
     
+    var random = Math.floor(Math.random() * 12);
+    console.log(random);
     var crystal = $("<div>");
-        crystal.attr("class", 'crystal');
+        crystal.attr({
+            "class": 'crystal',
+            "data-random": random
+        });
 
     $(".crystals").append(crystal);
 
 
 }
-//this game will have 4 crystals and random target number
 //each crystal will have random number 1-12
+
 //each new game will generate a new random bumber for each crystal
 //when clicking a crystal, it should adding to the total until
 //it equals target score
