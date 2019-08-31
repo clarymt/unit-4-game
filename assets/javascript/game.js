@@ -4,36 +4,41 @@ $( document ).ready(function() {
 var targetScore;
 var loss;
 var win;
+var previous = 0;
 
 
 targetScore = Math.floor(Math.random() * 129 ) + 30; 
 
 $("#result").text('Target Score: ' + targetScore);
 //console.log(targetScore);
-
+$(".crystals").empty();
 //this game will have 4 crystals and random target number
 for(var i = 0; i < 4; i++){
     
     //each crystal will have random number 1-12
  
     var random = Math.floor(Math.random() * 12) + 1;
-    //console.log(random);
+    console.log(random);
 
 
     var crystal = $("<div>");
         crystal.attr({
             "class": 'crystal',
-            "data-random": random
+            "datarandom": random
         });
 
     $(".crystals").append(crystal);
 }
 
-$(".crystal").on('click', function () {
+$(".crystals").on('click', function () {
 
-    var num = $(this).attr('data-random');
-    
-    console.log(typeof num);
+    //var result;
+
+
+    previous = previous + random;
+
+    console.log (previous);
+  
 
 });
 
