@@ -40,8 +40,6 @@ for(var i = 0; i < 4; i++){
 
 resetStart();
 
-
-
 $(document).on('click', ".crystal", function () {
 
     //var result;
