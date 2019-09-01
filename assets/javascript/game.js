@@ -2,12 +2,16 @@ $( document ).ready(function() {
 
 
 var targetScore;
-var loss;
-var win;
+var loss = 0;
+var win = 0;
 var previous = 0;
 
 
-targetScore = Math.floor(Math.random() * 129 ) + 30; 
+var resetStart = function () {
+
+    $(".crystals").empty();
+
+    targetScore = Math.floor(Math.random() * 129 ) + 30; 
 
 $("#result").text('Target Score: ' + targetScore);
 //console.log(targetScore);
@@ -31,21 +35,47 @@ for(var i = 0; i < 4; i++){
    
     $(".crystals").append(crystal);
  
+    }
 }
 
-$(".crystal").on('click', function () {
+resetStart();
+
+
+
+$(document).on('click', ".crystal", function () {
 
     //var result;
 
 
     previous = previous + parseInt(this.value);
 
+//created some funcitons for crystals to affect targetScore
+    if(previous > targetScore){
+        lost++;
+
+        $("#lost").html(lost);
+
+        previous = 0;
+
+        resetStart();
+
+    }
+
+    else if (previous === targetScore){
+        win++;
+        
+        $("#win").html(win);
+        
+        previous= 0; 
+
+        resetStart();
+
+    }
     console.log (previous);
   
-
 });
 
-//each new game will generate a new random bumber for each crystal
+//each new game will generate a new random Number for each crystal
 //when clicking a crystal, it should adding to the total until
 //it equals target score
 //if it is greater than target number it recieves +1 loss and will restart
