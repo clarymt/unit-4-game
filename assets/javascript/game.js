@@ -11,31 +11,34 @@ targetScore = Math.floor(Math.random() * 129 ) + 30;
 
 $("#result").text('Target Score: ' + targetScore);
 //console.log(targetScore);
-$(".crystals").empty();
+
 //this game will have 4 crystals and random target number
 for(var i = 0; i < 4; i++){
     
     //each crystal will have random number 1-12
  
     var random = Math.floor(Math.random() * 12) + 1;
-    console.log(random);
+   // console.log(random);
 
 
-    var crystal = $("<div>");
-        crystal.attr({
-            "class": 'crystal',
-            "datarandom": random
-        });
-
+    var crystal = $("<img>");
+    
+    $(crystal).addClass("crystal img-responsive rounded shadow-lg p-3 mb-5 rounded");
+    
+    $(crystal).attr("src", "assets/images/crystal"+ (i + 1) +".jpg");
+   
+    $(crystal).val(random);
+   
     $(".crystals").append(crystal);
+ 
 }
 
-$(".crystals").on('click', function () {
+$(".crystal").on('click', function () {
 
     //var result;
 
 
-    previous = previous + random;
+    previous = previous + parseInt(this.value);
 
     console.log (previous);
   
