@@ -50,10 +50,10 @@ $(document).on('click', ".crystal", function () {
     previous = previous + parseInt(this.value);
 
 //created some funcitons for crystals to affect targetScore
-    if(previous > targetScore){
-        lost++;
+    if (previous > targetScore){
+        loss--;
 
-        $("#lost").html(lost);
+        $("#loss").html(loss);
 
         previous = 0;
 
