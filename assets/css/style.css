@@ -32,25 +32,29 @@ h3 {
 }
 
 h3, p {
-    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
 }
 
-#sum {
+#sum {    font-family: 'Open Sans Condensed', sans-serif;
+
     font-size: larger;
 }
 
 #win {
-    color: rgb(59, 172, 59);
+    font-family: 'Permanent Marker', cursive;
+
+    color: rgb(90, 197, 90);
     font-style: italic;
     font-size: large;
-    background-image: linear-gradient(to right, rgb(59, 97, 102), rgba(255, 255, 0, 0));
+    background-image: linear-gradient(to right, rgb(33, 62, 66), rgba(255, 255, 0, 0));
 
 }
 
 #loss {
-    color: rgb(202, 103, 103);
+    font-family: 'Permanent Marker', cursive;
+
+    color: rgb(255, 184, 184);
     font-style: italic;
     font-size: large;
-    background-image: linear-gradient(to right, rgb(59, 97, 102), rgba(255, 255, 0, 0));
+    background-image: linear-gradient(to right, rgb(33, 62, 66), rgba(255, 255, 0, 0));
 }
