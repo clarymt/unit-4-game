@@ -27,7 +27,7 @@ for(var i = 0; i < 4; i++){
 
     var crystal = $("<img>");
     
-    $(crystal).addClass("crystal img-responsive rounded shadow-lg p-3 mb-5 rounded");
+    $(crystal).addClass("crystal m-3 col-md-3 text-center img-responsive shadow-lg p-3 rounded");
     
     $(crystal).attr("src", "assets/images/crystal"+ (i + 1) +".jpg");
    
@@ -48,16 +48,14 @@ $(document).on('click', ".crystal", function () {
 
 
     previous = previous + parseInt(this.value);
-    $("#sum").html(previous);
+    $("#sum").html("Your score: " + previous);
     //previous is now attached to id "sum" to update user with current accumulating values
 
-//created some goal for crystals to reach targetScore
+//created corresponding outcomes for crystal sum in relation to targetScore
     if (previous > targetScore){
-        loss--;
+        loss++;
 
-        $("#loss").html(loss);
-
-        //previous = 0; placed these in resetStart function to condense code
+        $("#loss").html("This is going on your permanent record, deduct " + loss + " point(s) from your IQ.");
 
         resetStart();
 
@@ -66,10 +64,8 @@ $(document).on('click', ".crystal", function () {
     else if (previous === targetScore){
         win++;
         
-        $("#win").html(win);
+        $("#win").html("Congrats, you've gained " + win + " brain cell(s).");
         
-       //previous = 0; placed these in resetStart function to condense code 
-
         resetStart();
 
     }

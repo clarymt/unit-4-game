@@ -1,13 +1,56 @@
 .crystal {
-    height: 200px;
-    width: 200px;
-   
+    height: 175px;
+    width: 175px;
 }
+
+
+html, body {
+    position: relative;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
 
 
 body {
     background-image: url(../images/crystalbackground.jpg);
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-attachment: scroll;
+}
+
+h1 {
+    font-family: 'Modak', cursive;
+    margin-left: 5%;
+    font-size: 80px;
+}
+
+h3 {
+    margin-left: 7%;
+}
+
+h3, p {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+#sum {
+    font-size: larger;
+}
+
+#win {
+    color: rgb(59, 172, 59);
+    font-style: italic;
+    font-size: large;
+    background-image: linear-gradient(to right, rgb(59, 97, 102), rgba(255, 255, 0, 0));
+
+}
+
+#loss {
+    color: rgb(202, 103, 103);
+    font-style: italic;
+    font-size: large;
+    background-image: linear-gradient(to right, rgb(59, 97, 102), rgba(255, 255, 0, 0));
 }
